@@ -1,34 +1,44 @@
-{
+{   
+    "schema_id": {
+        "name" : "heatherYeo", 
+        "namespace" : "colectomy-stoma-survey", 
+        "version" : {
+            "major" : 1, 
+            "minor" : 0
+        }
+    }, 
+
     "name": "Colectomy with Stoma",
     "description": "A survey to gather information about a patient's experience after a colectomy.",
-    "icon_id": null,
     "survey_items": [
 		{
             "survey_item_type": "number_prompt",
-            "survey_item_id": "PainLevel",
+            "survey_item_id": "painLevel",
             "condition": null,
             "display_type": "picker",
             "text": "Indicate your pain level [0 no pain - 10 worst pain]",
-            "display_label": "PainLevel",
+            "display_label": "Pain Level",
             "skippable": false,
             "default_response": null,
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
         	},
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereGenAct",
             "condition": null,
             "display_type": "picker",
             "text": "How much does your pain interfere with general activity? [0 Does not interfere - 10 Completely interferes]",
-            "display_label": "GenAct",
+            "display_label": "General Activity",
             "skippable": false,
             "default_response": null,
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
         	},
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereRelations",
@@ -42,6 +52,7 @@
             "max": 10,
             "whole_numbers_only": true
         	},
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereSleep",
@@ -55,151 +66,45 @@
             "max": 10,
             "whole_numbers_only": true
         	},
-		{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DryMouth",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced dry mouth in the last 24 hours?",
-            "display_label": "DryMouth",
-            "skippable": false,
-            "default_response": null,
+
+        {
+            "survey_item_type" : "string_multi_choice_prompt", 
+            "survey_item_id" : "Symptoms",
+            "condition": null, 
+            "display_type": "list", 
+            "text": "Please check any symptoms below that you have had in the last 24 hours [select all apply].", 
+            "skippable": false, 
+            "display_label" : "Symptoms",
+            "default_response": null, 
             "choices": [
                 {
-                    "text": "Yes",
-                    "value": 1
-                },
+                    "text" : "Dry mouth", 
+                    "value" : "Dry mouth"
+                }, 
+
                 {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-	{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDryMouth",
-            "condition": "DryMouth == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
+                    "text" : "Dark urine",
+                    "value" : "Dark urine" 
+                }, 
+
                 {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
+                    "text" : "Decreased energy", 
+                    "value" : "Decreased energy"
+                }, 
+
+                {
+                    "text" : "Nausea", 
+                    "value" : "Nausea"
+                }, 
+
+                {
+                    "text" : "None of the above", 
+                    "value" : "None"
                 }
             ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DarkUrine",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced dark urine in the last 24 hours?",
-            "display_label": "DarkUrine",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDarkUrine",
-            "condition": "DarkUrine == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DecreasedEnergy",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced decreased energy in the last 24 hours?",
-            "display_label": "DecreasedEnergy",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDecreasedEnergy",
-            "condition": "DecreasedEnergy == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "Nausea",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced nausea in the last 24 hours?",
-            "display_label": "Nausea",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactNausea",
-            "condition": "Nausea == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
+        }, 
+
+	   {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "Vomiting",
             "condition": null,
@@ -213,16 +118,17 @@
                     "text": "Yes",
                     "value": 1
                 },
-		{
+                
+                {
                     "text": "No",
                     "value": 0
                 }
             ]
         },
 
-{
+        {
             "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactVomiting",
+            "survey_item_id": "ProviderContactDarkUrine",
             "condition": "Vomiting == 1",
             "display_type": "list",
             "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
@@ -236,13 +142,14 @@
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "MealPercent",
-            "condition": null,
+            "condition": null, 
             "display_type": "list",
             "text": "On average, what percent of your meals have you been eating over the last day?",
-            "display_label": "MealPercent",
+            "display_label": "Percentage of the Meal",
             "skippable": false,
             "default_response": null,
             "choices": [
@@ -264,7 +171,25 @@
                 }
             ]
         },
-{
+
+        {
+            "survey_item_type": "number_single_choice_prompt",
+            "survey_item_id": "ProviderContactMealPercent",
+            "condition": "MealPercent == 1",
+            "display_type": "list",
+            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
+            "display_label": "ProviderContact",
+            "skippable": false,
+            "default_response": null,
+            "choices": [
+                {
+                    "text": "Yes, I have contacted my provider.",
+                    "value": 1
+                }
+            ]
+        },
+
+        {
             "survey_item_type": "string_multi_choice_prompt",
             "survey_item_id": "MealPercentReason",
             "condition": "MealPercent == 1",
@@ -294,7 +219,8 @@
             "min_choices": null,
             "max_choices": null
         },
-{
+       
+        {
             "survey_item_type": "string_multi_choice_prompt",
             "survey_item_id": "MealPercentReason",
             "condition": "MealPercent == 2",
@@ -325,23 +251,7 @@
             "max_choices": null
         },
 
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactMealPercent",
-            "condition": "MealPercent == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
+        {
             "survey_item_type": "number_prompt",
             "survey_item_id": "LiquidIntake",
             "condition": null,
@@ -353,8 +263,9 @@
             "min": 0,
             "max": 20,
             "whole_numbers_only": true
-        	},
-{
+        },
+
+        {
             "survey_item_type": "string_single_choice_prompt",
             "survey_item_id": "ColIl",
             "condition": null,
@@ -373,9 +284,9 @@
                     "value": "Ileostomy"
                 }
             ]
-        },
+        }, 
 
-{
+        {
             "survey_item_type": "string_single_choice_prompt",
             "survey_item_id": "OstomyOutput",
             "condition": "ColIl == \"Colostomy\"",
@@ -403,7 +314,8 @@
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "ProviderContactOstomy",
             "condition": "OstomyOutput == \"None\"",
@@ -419,10 +331,11 @@
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "string_single_choice_prompt",
             "survey_item_id": "IleostomyOutput",
-            "condition": "ColIl == \"Ileostomy\"",
+            "condition": null,
             "display_type": "list",
             "text": "What is your stoma output over the last day (in mL)?",
             "display_label": "Ileostomy Output",
@@ -433,43 +346,26 @@
                     "text": "0-100 mL",
                     "value": "Low"
                 },
-		{
-                    "text": "100-500 mL",
-                    "value": "100-500"
+    
+                {
+                    "text": "101-1200 mL",
+                    "value": "101-1200"
                 },
-		{
-                    "text": "500-1000 mL",
-                    "value": "500-1000"
-                },
-		{
-                    "text": "1000-2000 mL",
+
+                {
+                    "text": ">1200 mL",
                     "value": "High"
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactIleostomyLow",
-            "condition": "IleostomyOutput == \"Low\"",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-	{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactIleostomyHigh",
+            "survey_item_id": "ProviderContactIleostomyOutput",
             "condition": "IleostomyOutput == \"High\"",
             "display_type": "list",
             "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
+            "display_label": "Provider Contact",
             "skippable": false,
             "default_response": null,
             "choices": [
@@ -479,81 +375,125 @@
                 }
             ]
         },
-{
-            "survey_item_type": "string_single_choice_prompt",
+
+        {
+            "survey_item_type": "number_single_choice_prompt", 
+            "survey_item_id": "HighTemperature", 
+            "condition": null, 
+            "display_type": "picker",
+            "text": "Is your temperature over 101.5°?", 
+            "display_label": "Your Temperature", 
+            "skippable": false, 
+            "default_response": null, 
+            "choices" : [
+                {
+                    "text": "Yes", 
+                    "value": 1
+                }, 
+
+                {
+                    "text": "No", 
+                    "value": 0
+                }
+            ]
+        },
+
+        {
+            "survey_item_type": "number_single_choice_prompt",
+            "survey_item_id": "ProviderContactHighTemperature",
+            "condition": "HighTemperature == 1",
+            "display_type": "list",
+            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
+            "display_label": "ProviderContact",
+            "skippable": false,
+            "default_response": null,
+            "choices": [
+                {
+                    "text": "Yes, I have contacted my provider.",
+                    "value": 1
+                }
+            ]
+        }, 
+
+        {
+            "survey_item_type": "number_prompt",
             "survey_item_id": "Temperature",
             "condition": null,
-            "display_type": "list",
+            "display_type": "picker",
             "text": "What is your current temperature in Fahrenheit?",
             "display_label": "Temperature",
             "skippable": false,
             "default_response": null,
-            "choices": [
-                {
-                    "text": "90-95 degrees",
-                    "value": "90-95"
-                },
-                {
-                    "text": "95-97",
-                    "value": "95-97"
-                },
-                {
-                    "text": "98-100",
-                    "value": "98-100"
-                },
-                {
-                    "text": "100-103",
-                    "value": "100-103"
-                },
-                {
-                    "text": "103.1 or higher",
-                    "value": "103.1+"
-                }
-            ]
-        }
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactTemperature",
-            "condition": "Temperature == \"103.1+\"",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        }
-	]
+            "min": 95, 
+            "max": 105,
+            "whole_numbers_only": false
+        }, 
+
+        {
+            "survey_item_type": "message", 
+            "survey_item_id": "UsePam", 
+            "condition": null,
+            "text": "Please open PAM and do the survey."
+        }, 
+    ], 
+
+
+    "name": "Stoma Photo Survey",
+    "description": "A survey to gather stoma photo from a patient once a day.",   
+    "survey_items": [
+        {
+            "survey_item_type": "image_prompt", 
+            "survey_item_id": "StomaOutput", 
+            "condition": null,
+            "display_type": "camera", 
+            "display_label": "Image", 
+            "text": "Please take a photo of your stoma output.",
+            "skippable": false, 
+            "default_response": null, 
+            "max_dimension": null
+        }, 
+
+        {
+            "survey_item_type": "image_prompt", 
+            "survey_item_id": "StomaPhoto", 
+            "condition": null,
+            "display_type": "camera", 
+            "display_label": "Stoma Photo",
+            "text": "Please take a photo of your stoma.",
+            "skippable": false, 
+            "default_response": null, 
+            "max_dimension": null
+        }, 
+
+        {
+            "survey_item_type": "image_prompt", 
+            "survey_item_id": "UrinePhoto", 
+            "condition": null,
+            "display_type": "camera", 
+            "display_label": "Urine Photo",
+            "text": "Please take a photo of your urine.",
+            "skippable": false, 
+            "default_response": null, 
+            "max_dimension": null
+        }, 
+    ], 
+
+    "name": "Water Reminder",
+    "description": "Reminder for the patient to have water once three days.", 
+    "survey_items": [
+        {
+            "survey_item_type": "message", 
+            "survey_item_id": "waterReminder", 
+            "condition": null,
+            "text": "Please drink a glass of water if you haven't in the the last hour."
+        } 
+    ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 {
     "name": "Colectomy Non-Stoma",
     "description": "A survey to gather information about a patient's experience after colectomy",
-    "icon_id": null,
     "survey_items": [
 		{
             "survey_item_type": "number_prompt",
@@ -561,13 +501,14 @@
             "condition": null,
             "display_type": "picker",
             "text": "Indicate your pain level [0 no pain - 10 worst pain]",
-            "display_label": "PainLevel",
+            "display_label": "Pain Level",
             "skippable": false,
             "default_response": null,
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
-        	},
+        },
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereGenAct",
@@ -580,7 +521,8 @@
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
-        	},
+        },
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereRelations",
@@ -593,7 +535,8 @@
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
-        	},
+        },
+
 		{
             "survey_item_type": "number_prompt",
             "survey_item_id": "InterfereSleep",
@@ -606,152 +549,47 @@
             "min": 0,
             "max": 10,
             "whole_numbers_only": true
-        	},
-		{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DryMouth",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced dry mouth in the last 24 hours?",
-            "display_label": "DryMouth",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
         },
-	{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDryMouth",
-            "condition": "DryMouth == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
+
+
+        {
+            "survey_item_type" : "string_multi_choice_prompt", 
+            "survey_item_id" : "Symptoms",
+            "condition": null, 
+            "display_type": "list", 
+            "text": "Please check any symptoms below that you have had in the last 24 hours [select all apply].", 
+            "skippable": false, 
+            "display_label" : "Symptoms",
+            "default_response": null, 
             "choices": [
                 {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
+                    "text" : "Dry mouth", 
+                    "value" : "Dry mouth"
+                }, 
+
+                {
+                    "text" : "Dark urine",
+                    "value" : "Dark urine" 
+                }, 
+
+                {
+                    "text" : "Decreased energy", 
+                    "value" : "Decreased energy"
+                }, 
+
+                {
+                    "text" : "Nausea", 
+                    "value" : "Nausea"
+                }, 
+
+                {
+                    "text" : "None of the above", 
+                    "value" : "None"
                 }
             ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DarkUrine",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced dark urine in the last 24 hours?",
-            "display_label": "DarkUrine",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDarkUrine",
-            "condition": "DarkUrine == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "DecreasedEnergy",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced decreased energy in the last 24 hours?",
-            "display_label": "DecreasedEnergy",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactDecreasedEnergy",
-            "condition": "DecreasedEnergy == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "Nausea",
-            "condition": null,
-            "display_type": "list",
-            "text": "Have you experienced nausea in the last 24 hours?",
-            "display_label": "Nausea",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes",
-                    "value": 1
-                },
-                {
-                    "text": "No",
-                    "value": 0
-                }            
-		]
-        },
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactNausea",
-            "condition": "Nausea == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
+        }, 
+
+       {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "Vomiting",
             "condition": null,
@@ -765,14 +603,15 @@
                     "text": "Yes",
                     "value": 1
                 },
-		{
+                
+                {
                     "text": "No",
                     "value": 0
                 }
             ]
         },
 
-{
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "ProviderContactVomiting",
             "condition": "Vomiting == 1",
@@ -788,7 +627,9 @@
                 }
             ]
         },
-{
+
+
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "MealPercent",
             "condition": null,
@@ -816,7 +657,25 @@
                 }
             ]
         },
-{
+
+        {
+            "survey_item_type": "number_single_choice_prompt",
+            "survey_item_id": "ProviderContactMealPercent",
+            "condition": "MealPercent == 1",
+            "display_type": "list",
+            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
+            "display_label": "ProviderContact",
+            "skippable": false,
+            "default_response": null,
+            "choices": [
+                {
+                    "text": "Yes, I have contacted my provider.",
+                    "value": 1
+                }
+            ]
+        },
+
+        {
             "survey_item_type": "string_multi_choice_prompt",
             "survey_item_id": "MealPercentReason",
             "condition": "MealPercent == 1",
@@ -846,7 +705,8 @@
             "min_choices": null,
             "max_choices": null
         },
-{
+
+        {
             "survey_item_type": "string_multi_choice_prompt",
             "survey_item_id": "MealPercentReason",
             "condition": "MealPercent == 2",
@@ -877,23 +737,7 @@
             "max_choices": null
         },
 
-{
-            "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactMealPercent",
-            "condition": "MealPercent == 1",
-            "display_type": "list",
-            "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
-            "display_label": "ProviderContact",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
-                {
-                    "text": "Yes, I have contacted my provider.",
-                    "value": 1
-                }
-            ]
-        },
-{
+       {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "BowelMovements",
             "condition": null,
@@ -949,7 +793,8 @@
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "ProviderContactBM",
             "condition": "BowelMovements == 10",
@@ -965,7 +810,8 @@
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "string_single_choice_prompt",
             "survey_item_id": "BMConsistency",
             "condition": null,
@@ -989,12 +835,12 @@
                 },
                 {
                     "text": "Hard",
-                    "value": Hard
+                    "value": "Hard"
                 }
             ]
         },
 
-{
+        {
             "survey_item_type": "number_prompt",
             "survey_item_id": "LiquidIntake",
             "condition": null,
@@ -1007,10 +853,11 @@
             "max": 20,
             "whole_numbers_only": true
         	},
-{
+
+        {
             "survey_item_type": "string_single_choice_prompt",
             "survey_item_id": "UrineOutput",
-            "condition": null",
+            "condition": null,
             "display_type": "list",
             "text": "What is the approximate amount (in mL) of your urine output over the last day?",
             "display_label": "UrineOutput",
@@ -1021,21 +868,25 @@
                     "text": "0-500 mL",
                     "value": "Low"
                 },
-		{
+
+		        {
                     "text": "500-1000 mL",
                     "value": "500-1000"
                 },
-		{
+
+		        {
                     "text": "1000-1500 mL",
                     "value": "1000-1500"
                 },
-		{
+
+		        {
                     "text": "1500-2000 mL",
                     "value": "1500-2000"
                 }
             ]
         },
-{
+
+        {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "ProviderContactUrineOutputLow",
             "condition": "UrineOutput == \"Low\"",
@@ -1051,42 +902,40 @@
                 }
             ]
         },
-{
-            "survey_item_type": "string_single_choice_prompt",
-            "survey_item_id": "Temperature",
+
+        {
+            "survey_item_type": "message",
+            "survey_item_id": "PamUsage", 
             "condition": null,
-            "display_type": "list",
-            "text": "What is your current temperature in Fahrenheit?",
-            "display_label": "Temperature",
-            "skippable": false,
-            "default_response": null,
-            "choices": [
+            "text": "Please turn on PAM and do the survey."
+        }, 
+
+        {
+            "survey_item_type": "number_single_choice_prompt", 
+            "survey_item_id": "HighTemperature", 
+            "condition": null, 
+            "display_type": "picker",
+            "text": "Is your temperature over 101.5°?", 
+            "display_label": "Your Temperature", 
+            "skippable": false, 
+            "default_response": null, 
+            "choices" : [
                 {
-                    "text": "90-95 degrees",
-                    "value": "90-95"
-                },
+                    "text": "Yes", 
+                    "value": 1
+                }, 
+
                 {
-                    "text": "95-97",
-                    "value": "95-97"
-                },
-                {
-                    "text": "98-100",
-                    "value": "98-100"
-                },
-                {
-                    "text": "100-103",
-                    "value": "100-103"
-                },
-                {
-                    "text": "103.1 or higher",
-                    "value": "103.1+"
+                    "text": "No", 
+                    "value": 0
                 }
             ]
-        }
-{
+        },
+
+        {
             "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "ProviderContactTemperature",
-            "condition": "Temperature == \"103.1+\"",
+            "survey_item_id": "ProviderContactHighTemperature",
+            "condition": "HighTemperature == 1",
             "display_type": "list",
             "text": "Your response to the previous question was outside of normal values. While there may not be a medical emergency, we recommend you contact your provider to discuss your response at (212) 746-6030.",
             "display_label": "ProviderContact",
@@ -1098,6 +947,47 @@
                     "value": 1
                 }
             ]
-        }
-	]
+        }, 
+
+        {
+            "survey_item_type": "number_prompt",
+            "survey_item_id": "Temperature",
+            "condition": null,
+            "display_type": "picker",
+            "text": "What is your current temperature in Fahrenheit?",
+            "display_label": "Temperature",
+            "skippable": false,
+            "default_response": null,
+            "min": 95, 
+            "max": 105,
+            "whole_numbers_only": false
+        }, 
+    ], 
+
+    "name": "Stoma Photo Survey",
+    "description": "A survey to gather stoma photo from a patient once a day.",   
+    "survey_items": [
+        {
+            "survey_item_type": "image_prompt", 
+            "survey_item_id": "UrinePhoto", 
+            "condition": null,
+            "display_type": "camera", 
+            "display_label": "Urine Photo",
+            "text": "Please take a photo of your urine.",
+            "skippable": false,
+            "default_response": null, 
+            "max_dimension": null
+        }, 
+    ], 
+
+    "name": "Water Reminder",
+    "description": "Reminder for the patient to intake water three days a time.",  
+    "survey_items": [
+        {
+            "survey_item_type": "message", 
+            "survey_item_id": "waterReminder", 
+            "condition": null,
+            "text": "Please drink a glass of water if you haven't in the the last hour."
+        } 
+    ]
 }
