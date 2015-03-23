@@ -1,7 +1,15 @@
 {
     "name": "RA-RNA Weekly Questionnaire",
-    "description": "A list of questions about a patient's experience with rheumatoid arthritis (RA)",
-    "icon_id": null,
+    "description": "A list of questions about a patient\u0027s experience with rheumatoid arthritis (RA)",
+    "schema_id": {
+    "namespace": "danaOrange", 
+    "name": "RA-RNA-questionnaire",
+    "version": {
+      "major": 1,
+      "minor": 0
+      }
+    },
+
     "survey_items": [
 	{
             "survey_item_type": "number_prompt",
@@ -86,7 +94,8 @@
             "min_choices": null,
             "max_choices": null
         },
-{
+
+       {
             "survey_item_type": "number_single_choice_prompt",
             "survey_item_id": "MissedMed",
             "condition": null,
@@ -234,9 +243,10 @@
                 }
             ]
         },
+
         {
             "survey_item_type": "number_single_choice_prompt",
-            "survey_item_id": "Sleep",
+            "survey_item_id": "SleepHour",
             "condition": null,
             "display_type": "list",
             "text": "In the past 7 days, how run-down did you feel on average?",
