@@ -1,0 +1,912 @@
+{
+  "name": "Compliance Diary Survey", 
+  "description": "A survey to gather information about a user\u0027s compliance with the app.", 
+  "schema_id": {
+    "namespace": "lisaWitkin", 
+    "name": "compliance-diary",
+    "version": {
+      "major": 1,
+      "minor": 0
+    }
+  }, 
+
+  "survey_items": [
+    {
+      "survey_item_type": "number_prompt",
+      "survey_item_id": "HoursWithPhoneOn",
+      "condition": null, 
+      "display_type": "picker",
+      "text": "For how many hours in the last 24 hours was your phone turned on?",
+      "display_label": "Hours With Phone On",
+      "skippable": false, 
+      "default_response": null, 
+      "min": 0, 
+      "max": 24,
+      "whole_numbers_only": true
+      }, 
+      
+      {
+        "survey_item_type": "string_single_choice_prompt", 
+        "survey_item_id": "ActivityDuringPhoneOff", 
+        "condition": null, 
+        "display_type": "list", 
+        "text": "What were you doing when you turned off your phone?", 
+        "display_label": "Activity when the phone is turned on", 
+        "skippable": false, 
+        "default_response": null, 
+        "choices": [
+          {
+            "text": "Sitting", 
+            "value": "Sitting"
+          }, 
+
+          {
+            "text": "Walking", 
+            "value": "Walking"
+          }, 
+
+          {
+            "text": "Running", 
+            "value": "Running"
+          }, 
+
+          {
+            "text": "Driving", 
+            "value": "Driving"
+          }, 
+
+          {
+            "text": "Other", 
+            "value": "Other"
+          }
+        ]
+
+      },
+      
+      {
+      
+        "survey_item_type": "text_prompt", 
+        "survey_item_id": "ActivityDuringPhoneOffOther", 
+        "condition": "ActivityDuringPhoneOff == \"Other\"", 
+        "display_type": "textbox",
+        "text": "Then what were you doing when you turned off your phone?", 
+        "display_label": "Activity when phone is off", 
+        "skippable": false, 
+        "default_response": null, 
+        "min": null, 
+        "max": null 
+      },
+      
+      {
+        "survey_item_type": "number_single_choice_prompt", 
+        "survey_item_id": "TurnOffApp", 
+        "condition": null, 
+        "display_type": "list", 
+        "text": "While your phone was on, did you turn off the app?", 
+        "display_label": "Status of app when phone is on", 
+        "skippable": false, 
+        "default_response": null, 
+        "choices": [
+          {
+            "text": "Yes", 
+            "value": 1
+          }, 
+
+          {
+            "text": "No", 
+            "value": 0
+          }
+        ]
+      },
+      
+      {
+        "survey_item_type": "string_multi_choice_prompt",
+        "survey_item_id": "ReasonToTurnOffApp", 
+        "condition": "TurnOffApp == 1", 
+        "display_type": "list", 
+        "text": "Why did you turn off the app?", 
+        "display_label": "Reason for turning off app", 
+        "skippable": false, 
+        "default_response": null, 
+        "choices": [
+          {
+            "text": "to save battery power", 
+            "value": "to save battery power"
+          }, 
+
+          {
+            "text": "did not want the app to pick up what I was doing", 
+            "value": "did not want the app to pick up what I was doing"
+          }, 
+
+          {
+            "text": "Other", 
+            "value": "Other"
+          }
+        ]
+      },
+      
+      {
+        "survey_item_type": "text_prompt", 
+        "survey_item_id": "ReasonToTurnOffAppOther", 
+        "condition": "ReasonToTurnOffApp == \"Other\"", 
+        "display_type": "textbox",
+        "text": "Then why did you turn off the app?", 
+        "display_label": "Reason for turning off app", 
+        "skippable": false, 
+        "default_response": null, 
+        "min": null, 
+        "max": null 
+      },
+
+      {
+        "survey_item_type": "number_prompt",
+        "survey_item_id": "PhoneIsPhysicallyOnHours",
+        "condition": null, 
+        "display_type": "picker", 
+        "text": "While your phone was on and while the app was running (i.e., you did not turn if off), for how many hours did you have the phone physically on you?", 
+        "display_label": "How long is the phone on with app running?", 
+        "skippable": false, 
+        "default_response": null, 
+        "min": 0, 
+        "max": 24,
+        "whole_numbers_only": true
+      }, 
+
+      {
+        "survey_item_type": "string_single_choice_prompt", 
+        "survey_item_id": "PhonePhysicallyOn", 
+        "condition": null, 
+        "display_type": "list", 
+        "text": "Why was the phone not physically on you?", 
+        "display_label": "Hours when the phone is physically on you", 
+        "skippable": false, 
+        "default_response": null, 
+        "choices": [
+          {
+            "text": "Bothersome", 
+            "value": "Bothersome"
+          }, 
+
+          {
+            "text": "Forgot", 
+            "value": "Forgot"
+          }, 
+
+          {
+            "text": "Other", 
+            "value": "Other"
+          }
+        ]
+      }, 
+
+      {
+        "survey_item_type": "text_prompt", 
+        "survey_item_id": "PhonePhysicallyOther", 
+        "condition": "PhonePhysicallyOn == \"Other\"", 
+        "display_type": "textbox",
+        "text": "Then why was the phone not physically on you?", 
+        "display_label": "Reason for not bringing the phone", 
+        "skippable": false, 
+        "default_response": null, 
+        "min": null, 
+        "max": null 
+      },
+
+      {
+        "survey_item_type": "string_single_choice_prompt", 
+        "survey_item_id": "PhoneNotPhysicallyOnAct", 
+        "condition": null, 
+        "display_type": "list", 
+        "text": "What were you doing when the phone was on but you did not have the phone on you?", 
+        "display_label": "Activity when the phone is not physically on you", 
+        "skippable": false, 
+        "default_response": null, 
+        "choices": [
+          {
+            "text": "Sitting", 
+            "value": "Sitting"
+          }, 
+
+          {
+            "text": "Walking", 
+            "value": "Walking"
+          }, 
+
+          {
+            "text": "Running", 
+            "value": "Running"
+          }, 
+
+          {
+            "text": "Driving", 
+            "value": "Driving"
+          }, 
+
+          {
+            "text": "Other", 
+            "value": "Other"
+          }
+        ]
+      }, 
+
+      {
+        "survey_item_type": "text_prompt",
+        "survey_item_id": "PhoneNotPhysicallyOnActivityOther", 
+        "condition": "PhoneNotPhysicallyOnAct == \"Other\"", 
+        "display_type": "textbox",
+        "text": "Then what were you doing when the phone was on but you did not have the phone on you?", 
+        "display_label": "Activity when phone is off", 
+        "skippable": false, 
+        "default_response": null, 
+        "min": null, 
+        "max": null 
+      }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****No Need to be coded*****
+
+{
+  "name": "Questionaire",
+  "description": "A questionaire to gather information about phone usage experinece.",
+  "schema_id": {
+    "namespace": "LisaWitkin", 
+    "name": "questionaireOnPhoneExperience",
+    "version": {
+      "major": 1,
+      "minor": 0
+    }
+  }, 
+
+  "survey_items": [
+    {
+      "survey_item_type": "number_prompt", 
+      "survey_item_id": "HoursWithPhoneOn", 
+      "condition": null, 
+      "display_type": "picker", 
+      "text": "On average, how many hours/days did you have the mobile phone on you, with the app and phone turned on?", ***should we change hours/days to just hours? And the number is from 0 to 24 in a day****
+      "display_label": "Hours with phone on and app running", 
+      "skippable": false, 
+      "default_response": null, 
+      "min": 0, 
+      "max": 24,
+      "whole_numbers_only": true
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "WillingnessToUseApp", 
+      "condition": null, 
+      "display_type": "list", 
+      "text": "For how long would you be willing to use the app?", 
+      "display_label": "Willness to use the app", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "1 wk", 
+          "value": "1 wk"
+        }, 
+
+        {
+          "text": "2 wk", 
+          "value": "2 wk"
+        }, 
+
+        {
+          "text": "3 wk", 
+          "value": "3 wk"
+        }, 
+
+        {
+          "text": "4 wk", 
+          "value": "4 wk"
+        }, 
+
+        {
+          "text": "2 months", 
+          "value": "2 months"
+        }, 
+
+        {
+          "text": "> 2 months", 
+          "value": "2 months +"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "HowLongWithASmartPhone", 
+      "condition": null, 
+      "display_type": "list", 
+      "text": "How long have you had a smartphone?", 
+      "display_label": "How long with a smartphone", 
+      "skippable": false,
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "< 6 months", 
+          "value": "< 6 months"
+        }, 
+
+        {
+          "text": "6mo - 1 yr", 
+          "value": "6mo - 1 yr"
+        }, 
+
+        {
+          "text": "> 1 yr", 
+          "value": "> 1 yr"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "UsageOfPhone", 
+      "condition": null, 
+      "text": "What do you use your smartphone most often to do?", 
+      "display_type": "list", 
+      "display_label": "Usage for smartphone", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Email", 
+          "value": "Email"
+        }, 
+
+        {
+          "text": "Phone", 
+          "value": "Phone"
+        }, 
+
+        {
+          "text": "Web", 
+          "value": "Web"
+        }, 
+
+        {
+          "text": "Apps", 
+          "value": "Apps"
+        }, 
+
+        {
+          "text": "all of the above", 
+          "value": "all of the above"
+        }, 
+
+        {
+          "text": "other", 
+          "value": "other"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ComplianceDiaryAccuracy", 
+      "condition": null, 
+      "text": "My electronic compliance diary was accurate:", 
+      "display_type": "list", 
+      "display_label": "Accuracy of compliance diary", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [  
+        {
+          "text": "strongly disagree", 
+          "value": 1
+        }, 
+
+        {
+          "text": "somewhat disagree", 
+          "value": 2
+        }, 
+
+        {
+          "text": "neither agree/disagree", 
+          "value": 3
+        }, 
+
+        {
+          "text": "somewhat agree", 
+          "value": 4
+        }, 
+
+        {
+          "text": "strongly agree", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ComplianceDiaryBurdensomeness", 
+      "condition": null, 
+      "text": "The compliance diary was not burdensome:", 
+      "display_type": "list", 
+      "display_label": "Burdensomeness of compliance diary", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "strongly disagree", 
+          "value": 1
+        }, 
+
+        {
+          "text": "somewhat disagree", 
+          "value": 2
+        }, 
+
+        {
+          "text": "neither agree/disagree", 
+          "value": 3
+        }, 
+
+        {
+          "text": "somewhat agree", 
+          "value": 4
+        }, 
+
+        {
+          "text": "strongly agree", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ApplicationEnjoyment", 
+      "condition": null, 
+      "text": "I enjoyed using the application:", 
+      "display_type": "list", 
+      "display_label": "Enjoyment of compliance diary", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "strongly disagree", 
+          "value": 1 
+        }, 
+
+        {
+          "text": "somewhat disagree", 
+          "value": 2
+        }, 
+
+        {
+          "text": "neither agree/disagree", 
+          "value": 3
+        }, 
+
+        {
+          "text": "somewhat agree", 
+          "value": 4
+        }, 
+
+        {
+          "text": "strongly agree", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ApplicationContinueUsage", 
+      "condition": null, 
+      "text": "I would use the application again:", 
+      "display_type": "list", 
+      "display_label": "Continuing usage of application", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "strongly disagree", 
+          "value": 1
+        }, 
+
+        {
+          "text": "somewhat disagree", 
+          "value": 2
+        }, 
+
+        {
+          "text": "neither agree/disagree", 
+          "value": 3
+        }, 
+
+        {
+          "text": "somewhat agree", 
+          "value": 4
+        }, 
+
+        {
+          "text": "strongly agree", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ApplicationEasiness", 
+      "condition": null, 
+      "text": "The application was easy to use:", 
+      "display_type": "list", 
+      "display_label": "Easiness of application", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "strongly disagree", 
+          "value": 1
+        }, 
+
+        {
+          "text": "somewhat disagree", 
+          "value":2
+        }, 
+
+        {
+          "text": "neither agree/disagree", 
+          "value": 3
+        }, 
+
+        {
+          "text": "somewhat agree", 
+          "value": 4
+        }, 
+
+        {
+          "text": "strongly agree", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ApplicationInfluence", 
+      "condition": null, 
+      "text": "Using this application has changed my level of activity:", 
+      "display_type": "list", 
+      "display_label": "Influence of application", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "increased significantly", 
+          "value": 1
+        }, 
+
+        {
+          "text": "increased some", 
+          "value": 2
+        }, 
+
+        {
+          "text": "no change", 
+          "value": 3
+        }, 
+
+        {
+          "text": "decreased some", 
+          "value": 4
+        }, 
+
+        {
+          "text": "decreased significantly", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "ReminderPostpone", 
+      "condition": null, 
+      "text": "I ignored or postponed a reminder:", 
+      "display_type": "list", 
+      "display_label": "Reminder postponed", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "text_prompt", 
+      "survey_item_id": "PostponeReminderReason", 
+      "condition": "ReminderPostpone == ", 
+      "text": "Why?", 
+      "display_type": "textbox", 
+      "display_label": "Reason for postponing reminder", 
+      "skippable": false, 
+      "default_response": null, 
+      "min": null, 
+      "max": null
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "TechnicalProblem", 
+      "condition": null, 
+      "text": "I experienced technical problem:", 
+      "display_type": "list", 
+      "display_label": "Technical Problem", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }, 
+
+        {
+          "text": "N/A - never received a reminder", 
+          "value": "N/A"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "FreezingProblem", 
+      "condition": null, 
+      "text": "I had problems with freezing:", 
+      "display_type": "list", 
+      "display_label": "Freezing Problem", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }, 
+
+        {
+          "text": "N/A - never received a reminder", 
+          "value": "N/A"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "BatteryDrainage", 
+      "condition": null, 
+      "text": "I had problems with excessive battery drainage compared to my usual usage:", 
+      "display_type": "list", 
+      "display_label": "Battery Drainage", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }, 
+
+        {
+          "text": "N/A - never received a reminder", 
+          "value": "N/A"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "PhoneBill", 
+      "condition": null, 
+      "text": "I had increased costs in my phone bill compared to my usual usage:", 
+      "display_type": "list", 
+      "display_label": "Phone bill", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }, 
+
+        {
+          "text": "N/A - never received a reminder", 
+          "value": "N/A"
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "string_single_choice_prompt", 
+      "survey_item_id": "DailyInterference", 
+      "condition": null, 
+      "text": "The application interfered with my daily activities:", 
+      "display_type": "list", 
+      "display_label": "Interference with daily activities", 
+      "skippable": false, 
+      "default_response": null, 
+      "choices": [
+        {
+          "text": "Never", 
+          "value": 1
+        }, 
+
+        {
+          "text": "Rarely", 
+          "value": 2
+        }, 
+
+        {
+          "text": "Sometimes", 
+          "value": 3
+        }, 
+
+        {
+          "text": "Often", 
+          "value": 4
+        }, 
+
+        {
+          "text": "Always", 
+          "value": 5
+        }
+      ]
+    }, 
+
+    {
+      "survey_item_type": "text_prompt", 
+      "survey_item_id": "AdverseEvents", 
+      "condition": null, 
+      "text": "Any other adverse events", 
+      "display_type": "textbox", 
+      "display_label": "Any adverse events", 
+      "skippable": false, 
+      "default_response": null, 
+      "min": null, 
+      "max": null
+    }
+  ]
+}
